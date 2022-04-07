@@ -1,0 +1,15 @@
+1) Explain what the terminal is in your own words.
+
+- A terminal is a space where you can run text commands on you computer to do different things. For example you can create/delete files, install apps, or change things within different files.
+
+
+
+2) What is the major difference between Git and Github
+
+- The major difference between Git and Github is that Git is local like on your computer and GitHub is a web page that can be accessed by anyone.   
+
+
+
+3) Why do we use Github?
+
+- We use Github so that we can have multiple people from anywhere in the world working on one project. It holds the original copy of a project.
