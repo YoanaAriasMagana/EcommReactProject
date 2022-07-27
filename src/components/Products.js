@@ -1,55 +1,31 @@
-import React from 'react';
+import ProductCard from "../components/ProductCard.js"
 
-class Products extends React.Component{
-    render() {
-        return (
-            
-            <><figure class="hero-image">
-            </figure><div>
+import { useEffect, useState } from "react";
 
-                    <h1 class="h1-text">New Releases</h1>
-                    <div class="new">
-                        <section class="product">
-                            <img class="product-image" src="pinkheadphones.avif" alt="Headphones"></img>
-                            <section class="product-name">
-                                <p>
-                                    EKB-7298W3
-                                </p>
-                            </section>
-                            <div class="product-price">
-                                <p>$499.00</p>
-                            </div>
-
-                        </section>
-                        <section class="product">
-                            <img class="product-image" src="moniaheadphones.avif" alt="Headphones"></img>
-                            <div class="product-name">
-                                <p>
-                                    ZQ-30000X
-                                </p>
-                            </div>
-                            <div class="product-price">
-                                <p>$579.00</p>
-                            </div>
-                        </section>
-                        <section class="product">
-                            <img class="product-image" src="yellowheadphones.avif" alt="Headphones"></img>
-                            <div class="product-name">
-                                <p>
-                                    NC-392WQ21
-                                </p>
-                            </div>
-                            <div class="product-price">
-                                <p>$149.00</p>
-                            </div>
-                        </section>
-                    </div>
-
-                </div></>
-               
-
-        )
-    }
+export default function Products() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch("https://ecommreactproject.herokuapp.com/")
+            .then(response => response.json())
+            .then(data => {
+                setProducts(data);
+            })
+    }, [])
+    return (
+        <>
+        <section className="search-bar">
+        <h1 className="prod-page-title">All Products</h1>
+        <input type="text" placeholder="Search for product..."/>
+        </section>
+        
+        <section className="main-section product-main">
+            <ul className="product-list">
+                {products.map(product => {
+                    return <ProductCard key={product.id} products={product} />
+                }
+                )}
+            </ul>
+        </section>
+        </>
+    )
 }
-
-export default Products;

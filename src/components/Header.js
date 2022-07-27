@@ -1,23 +1,31 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-class Header extends React.Component {
-    render(){
+
+export default function Header() {
+   
         return (
             <header>
-            <article class="header-text">
-            <img class="logo" src="./images/EchosLogo2.png" alt="logo" width="100px" height="100px"></img>
-                {/* <h1>Echos</h1> */}
-            </article>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="product.html">SHOP</a></li>
-                    <li><a href="contact.html">CONTACT US </a></li>
-                </ul>
-            </nav>
-        </header>
+            <div className="navbar">
+              <div className="logo">
+                <img
+                  src="./images/EchosLogo2.png"
+                  alt="logo"
+                  width="100px"
+                  height="100px"
+                />
+              </div>
+              
+              <ul className="nav-links">
+                <Link to="/" >Home</Link>
+            
+                <Link to="/Products" >Shop</Link>
+              
+                <Link to="/Contact" >Contact</Link>
+              </ul>
+            </div>
+            
+          </header>
         );
     }
-}
 
-export default Header;
