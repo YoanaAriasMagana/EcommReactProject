@@ -5,6 +5,7 @@ class Footer extends React.Component {
         return (
             <div className="footer-basic">
             <footer>
+              
               <div className="social">
                 <a href="https://www.instagram.com">
                   <i className="icon ion-social-instagram" />
